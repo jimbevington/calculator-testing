@@ -34,11 +34,23 @@ describe('calculator functionality', function() {
     expect(running_total.getAttribute('value')).to.eventually.equal('2');
   })
 
-  // it('should have a working * operator', function(){
-  //   running_total = element(by.css('#running_total'))
-  //   element(by.css('#number3')).click();
-  //   element(by.css('#operator_multiply')).click()
-  // })
+  it('should have a working * operator', function(){
+    running_total = element(by.css('#running_total'))
+    element(by.css('#number3')).click();
+    element(by.css('#operator_multiply')).click();
+    element(by.css('#number2')).click();
+    element(by.css('#operator_multiply')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('6');
+  })
+
+  it('should have a working / operator', function(){
+    running_total = element(by.css('#running_total'))
+    element(by.css('#number9')).click();
+    element(by.css('#operator_divide')).click();
+    element(by.css('#number2')).click();
+    element(by.css('#operator_divide')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('4.5');
+  })
 
   // - Do each of the arithmetical operations work to update the display with the result of the operation?
   // - Can we chain multiple operations together?
