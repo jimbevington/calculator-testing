@@ -130,11 +130,12 @@ describe('calculator functionality', function() {
     expect(running_total.getAttribute('value')).to.eventually.equal('12500000000');
   })
 
-  it('should return not a number if dividing by 0', function(){
+  it('should return \'Not a number\' if if dividing by 0', function(){
     running_total = element(by.css('#running_total'))
     element(by.css('#number5')).click();
     element(by.css('#operator_divide')).click();
     element(by.css('#number0')).click();
+    element(by.css('#operator_equals')).click();
     expect(running_total.getAttribute('value')).to.eventually.equal('Not a number');
   })
 
